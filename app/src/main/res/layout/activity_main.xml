@@ -6,13 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="528dp"
+        android:layout_height="805dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/unsplash_cssvezachvq"
+        tools:layout_editor_absoluteX="-59dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
         android:text="Hello World!"
+        android:textSize="100dp"
+        android:textColor="@color/white"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="363dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/laranjaVolait"
+        android:text="Button"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="589dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="305dp"
+        android:layout_height="20dp"
+        android:text="Ainda não possui cadastro? Cadastre-se!"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="649dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
