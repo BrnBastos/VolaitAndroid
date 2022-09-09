@@ -13,12 +13,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void TelaLogin(View view){
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-    }
-    public void TelaCadastro(View view){
-        Intent intent = new Intent(getApplicationContext(), CadastroActivity.class);
-        startActivity(intent);
-    }
+
 }
