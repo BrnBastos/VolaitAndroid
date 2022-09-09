@@ -28,8 +28,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="344dp"
-        android:layout_height="65dp"
+        android:layout_width="307dp"
+        android:layout_height="58dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/laranjaVolait"
@@ -39,24 +39,22 @@
         android:textSize="50px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81" />
+        app:layout_constraintVertical_bias="0.809" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="354dp"
+        android:layout_width="273dp"
         android:layout_height="20dp"
         android:layout_marginStart="53dp"
         android:layout_marginEnd="53dp"
         android:onClick="TelaCadastro"
         android:text="Ainda não possui cadastro? Cadastre-se!"
         android:textColor="@color/white"
-        android:textSize="19dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.0" />
@@ -65,18 +63,15 @@
         android:id="@+id/textView3"
         android:layout_width="111dp"
         android:layout_height="34dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"
         android:gravity="center"
         android:text="Volait"
         android:textColor="@color/white"
         android:textSize="80px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintVertical_bias="0.134" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
