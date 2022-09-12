@@ -58,4 +58,5 @@
         app:srcCompat="@drawable/perfil"
         tools:layout_editor_absoluteX="350dp"
         tools:layout_editor_absoluteY="675dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
