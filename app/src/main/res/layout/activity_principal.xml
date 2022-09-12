@@ -61,8 +61,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="74dp"
-        android:layout_height="37dp"
+        android:layout_width="86dp"
+        android:layout_height="36dp"
         android:gravity="center"
         android:text="Volait"
         android:textColor="@color/white"
