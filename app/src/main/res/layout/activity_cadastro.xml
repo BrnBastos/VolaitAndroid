@@ -42,7 +42,7 @@
         android:layout_marginStart="53dp"
         android:layout_marginEnd="53dp"
         android:onClick="TelaLogin1"
-        android:text="Já possui cadastro? Faça login"
+        android:text="@string/cadastro"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -119,5 +119,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.505"
         app:srcCompat="@drawable/pana" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
