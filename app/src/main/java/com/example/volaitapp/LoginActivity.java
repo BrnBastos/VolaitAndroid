@@ -19,4 +19,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), CadastroActivity.class);
         startActivity(intent);
     }
+    public void MainScreen(View view){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
 }

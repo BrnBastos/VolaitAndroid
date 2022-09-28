@@ -34,7 +34,7 @@
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/gray"
         android:onClick="TelaLogin"
-        android:text="login"
+        android:text="Iniciar"
         android:textColor="@color/white"
         android:textSize="50px"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -13,6 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/laranjaVolait"
+        android:onClick="MainScreen"
         android:text="login"
         android:textColor="@color/white"
         android:textSize="50px"

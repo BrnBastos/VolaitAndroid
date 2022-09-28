@@ -19,10 +19,11 @@
         android:id="@+id/imageButton8"
         android:layout_width="54dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="236dp"
         android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/explorar__1_" />
 
     <ImageButton
@@ -55,6 +56,8 @@
         android:layout_marginStart="48dp"
         android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toEndOf="@+id/imageButton6"
         app:srcCompat="@drawable/perfil" />
 
@@ -77,8 +80,8 @@
 
     <EditText
         android:id="@+id/artSearch"
-        android:layout_width="300dp"
-        android:layout_height="90dp"
+        android:layout_width="240dp"
+        android:layout_height="91dp"
         android:layout_marginTop="9dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/white"
@@ -94,38 +97,45 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/mapWebView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/geoTit"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.909"
         tools:text="Endereço" />
 
     <TextView
         android:id="@+id/locTime"
         android:layout_width="65dp"
         android:layout_height="40dp"
-        android:layout_marginStart="316dp"
         android:layout_marginTop="72dp"
         android:textAlignment="viewEnd"
         android:textColor="@color/laranjaVolait"
         android:textSize="20sp"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/locTemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:text="12:00" />
 
     <TextView
         android:id="@+id/locTemp"
         android:layout_width="65dp"
         android:layout_height="40dp"
-        android:layout_marginStart="316dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="24dp"
         android:textAlignment="viewEnd"
         android:textColor="@color/laranjaVolait"
         android:textSize="20sp"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/mapWebView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:text="30°C" />
 
     <WebView
@@ -135,25 +145,24 @@
         android:layout_marginTop="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/geoTit"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <Button
         android:id="@+id/btnLocalizacao"
         android:layout_width="173dp"
         android:layout_height="62dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="@color/laranjaVolait"
         android:onClick="onClick"
         android:text="Localizar"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapWebView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
