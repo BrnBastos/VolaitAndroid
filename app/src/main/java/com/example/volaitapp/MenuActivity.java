@@ -6,21 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_menu);
     }
+
     public void TelaGeoLoc(View view){
         Intent intent = new Intent(getApplicationContext(), GeolocActivity.class);
         startActivity(intent);
     }
-    public void TelaMenu(View view){
-        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+
+    public void Telahome(View view){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-
 }

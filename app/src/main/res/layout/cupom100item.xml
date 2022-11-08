@@ -7,10 +7,10 @@
 
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/imageViewBackP"
         android:layout_width="402dp"
         android:layout_height="417dp"
-        app:srcCompat="@drawable/cupom_background"
+        app:srcCompat="@drawable/cupom_background_purple"
         tools:layout_editor_absoluteX="-7dp"
         tools:layout_editor_absoluteY="51dp" />
 
