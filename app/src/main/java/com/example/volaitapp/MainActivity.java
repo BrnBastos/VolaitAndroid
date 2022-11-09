@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
     }
-    public void TelaGeoLoc(View view){
+    public void TelaCupom(View view){
         Intent intent = new Intent(getApplicationContext(), GeolocActivity.class);
         startActivity(intent);
     }

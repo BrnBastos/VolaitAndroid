@@ -24,4 +24,8 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
+    public void TelaeditPerfil(View view){
+        Intent intent = new Intent(getApplicationContext(), EditPerfilActivity.class);
+        startActivity(intent);
+    }
 }

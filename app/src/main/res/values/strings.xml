@@ -15,5 +15,16 @@
     <string name="coordenada_invalida">Coordenadas inválidas</string>
     <string name="servico_indisponivel">Esse serviço está indisponível</string>
 
+    <!--TelaAbout-->
+    <string name="TextAbout1">Volait’s App para Android</string>
+    <string name="TextAbout2">Versão 3.14.0</string>
+    <string name="TextAbout3">Desenvolvido por Ahrus</string>
+    <string name="TextAbout4">Todos os direitos reservados © Volait’s</string>
+
+    <!--Tela Cupom-->
+    <string name="textC1">O cumpom será automaticamente validado ao ser realizado a compra da passagem. Após gerado
+    , faça seu carrinho em nosso site www.volait.com.br e utilize o cupom na tela de pagamento
+        das passagens selecionadas.</string>
+
 
 </resources>
