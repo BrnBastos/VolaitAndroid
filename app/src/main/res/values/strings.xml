@@ -22,9 +22,8 @@
     <string name="TextAbout4">Todos os direitos reservados © Volait’s</string>
 
     <!--Tela Cupom-->
-    <string name="textC1">O cumpom será automaticamente validado ao ser realizado a compra da passagem. Após gerado
-    , faça seu carrinho em nosso site www.volait.com.br e utilize o cupom na tela de pagamento
-        das passagens selecionadas.</string>
-
+    <string name="textC1">O cumpom será automaticamente validado ao ser realizado a compra da passagem. Após gerado, faça seu carrinho em nosso site www.volait.com.br e utilize o cupom na tela de pagamento das passagens selecionadas.</string>
+    <string name="textC2">Cupom disponível no app para emissão até: 02 Jan 2023</string>
+    <string name="textC3">Cada cupom só poderá ser utilizado uma vez, e poderá ser encerrado antecipadamente caso o estoque de Cupons se esgote antés do término previsto neste regulamento.</string>
 
 </resources>

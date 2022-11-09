@@ -150,7 +150,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
-            android:onClick="Telahome"
+            android:onClick="TelaCupom"
             android:orientation="horizontal">
 
             <ImageView
@@ -188,7 +188,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
-            android:onClick="Telahome"
+            android:onClick="TelaeditPerfil"
             android:orientation="horizontal">
 
             <ImageView
@@ -226,7 +226,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
-            android:onClick="Telahome"
+            android:onClick="Telaprivacidade"
             android:orientation="horizontal">
 
             <ImageView
@@ -264,7 +264,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
-            android:onClick="Telahome"
+            android:onClick="TelaSobre"
             android:orientation="horizontal">
 
             <ImageView

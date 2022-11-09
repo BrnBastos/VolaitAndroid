@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void TelaCupom(View view){
-        Intent intent = new Intent(getApplicationContext(), GeolocActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
         startActivity(intent);
     }
     public void TelaMenu(View view){
