@@ -19,12 +19,12 @@
         app:srcCompat="@drawable/cupom_background_blue" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/btnCupomDetalhes"
         android:layout_width="98dp"
         android:layout_height="34dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackB"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBackB"
-        app:layout_constraintHorizontal_bias="0.996"
+        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="@+id/imageViewBackB"
         app:layout_constraintTop_toTopOf="@+id/imageViewBackB"
         app:layout_constraintVertical_bias="0.566"

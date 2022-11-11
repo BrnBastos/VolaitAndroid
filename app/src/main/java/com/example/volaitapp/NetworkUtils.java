@@ -16,7 +16,7 @@ import java.util.Random;
 
 
 public class NetworkUtils {
-    private static final String URL_API = "https://largeashbox33.conveyor.cloud/api/Arte";
+    private static final String URL_API = "https://largeashbox33.conveyor.cloud/api/Cupom";
     private static HttpURLConnection connec;
     private static BufferedReader reader;
     private static String artJSON;
@@ -42,7 +42,7 @@ public class NetworkUtils {
         return connec;
     }
 
-    static Bundle getArtsByName(String name){
+    static Bundle getCupomByID(String name){
         Bundle artBundle = new Bundle();
 
         try {
