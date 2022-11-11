@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnentrar"
         android:layout_width="288dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -17,15 +17,15 @@
         android:text="login"
         android:textColor="@color/white"
         android:textSize="50px"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/btncadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.962" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/btncadastro"
         android:layout_width="303dp"
         android:layout_height="27dp"
         android:onClick="TelaCadastro1"
@@ -34,9 +34,10 @@
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintVertical_bias="0.907" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -53,7 +54,7 @@
         app:srcCompat="@drawable/bro" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/txtSenhaLogin"
         android:layout_width="299dp"
         android:layout_height="52dp"
         android:layout_marginStart="41dp"
@@ -69,23 +70,24 @@
         app:layout_constraintVertical_bias="0.714" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtEmailLogin"
         android:layout_width="300dp"
         android:layout_height="53dp"
         android:layout_marginStart="39dp"
+        android:layout_marginTop="396dp"
         android:layout_marginEnd="38dp"
-        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Login"
         android:inputType="textPersonName"
         android:textColorHighlight="@color/black"
         android:textColorLink="@color/laranjaVolait"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+
+        app:layout_constraintBottom_toBottomOf="@+id/txtSenhaLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintHorizontal_bias="0.617"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -106,12 +108,11 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmailLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.571"
         app:srcCompat="@drawable/logiin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditPerfilActivity"
+    tools:context=".AtualizaSenhaActivity"
     android:background="@color/backgray">
 
     <ImageView
@@ -32,7 +32,8 @@
         app:layout_constraintVertical_bias="0.379"
         app:srcCompat="@drawable/volaitmain" />
 
-    <ImageView
+    <ImageButton
+        android:background="@color/white"
         android:id="@+id/imageView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -115,154 +116,102 @@
         android:layout_marginStart="53dp"
         android:layout_marginEnd="223dp"
         android:fontFamily="@font/inter_semibold"
-        android:text="edite seu perfil"
+        android:text="Atualize sua senha"
         android:textColor="@color/laranjaVolait"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView26"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName12"
+        android:id="@+id/editTextTextPersonName"
         android:layout_width="288dp"
         android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="29dp"
         android:ems="10"
-        android:hint="CPF"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:textColorHighlight="@color/black"
-        android:textColorLink="@color/laranjaVolait"
+        android:text="Senha Atual"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="288dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="296dp"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:inputType="textPersonName"
+        android:text="Nova Senha"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView26"
+        app:layout_constraintVertical_bias="0.923" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/editTextTextPersonName4"
         android:layout_width="288dp"
         android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="284dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="email"
+        android:fontFamily="@font/inter"
         android:inputType="textPersonName"
-        android:textColorHighlight="@color/black"
-        android:textColorLink="@color/laranjaVolait"
+        android:text="Repetir senha"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName10"
-        android:layout_width="288dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="280dp"
-        android:ems="10"
-        android:hint="Telefone"
-        android:inputType="textPersonName"
-        android:textColorHighlight="@color/black"
-        android:textColorLink="@color/laranjaVolait"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName9"
-        android:layout_width="288dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="452dp"
-        android:ems="10"
-        android:hint="nome social"
-        android:inputType="textPersonName"
-        android:textColorHighlight="@color/black"
-        android:textColorLink="@color/laranjaVolait"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
-        app:layout_constraintVertical_bias="0.384" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName7"
-        android:layout_width="288dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="520dp"
-        android:ems="10"
-        android:hint="nome completo"
-        android:inputType="textPersonName"
-        android:textColorHighlight="@color/black"
-        android:textColorLink="@color/laranjaVolait"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.564" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.028" />
 
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="153dp"
+        android:layout_width="136dp"
         android:layout_height="27dp"
         android:layout_marginStart="155dp"
         android:layout_marginEnd="198dp"
+        android:layout_marginBottom="400dp"
         android:fontFamily="@font/inter_semibold"
-        android:text="Para atualizar a senha"
+        android:text="Esqueceu a senha?"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintHorizontal_bias="0.778"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="83dp"
         android:layout_height="27dp"
-        android:layout_marginTop="44dp"
         android:fontFamily="@font/inter_semibold"
-        android:onClick="TelaAttSenha"
         android:text="clique aqui"
         android:textColor="@color/laranjaVolait"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintBottom_toBottomOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintTop_toTopOf="@+id/textView19" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="224dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="48dp"
+        android:id="@+id/button3"
+        android:layout_width="214dp"
+        android:layout_height="46dp"
         android:text="Salvar"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintVertical_bias="0.325" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

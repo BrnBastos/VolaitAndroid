@@ -40,4 +40,8 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
         startActivity(intent);
     }
+    public void TelaMenu(View view){
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        startActivity(intent);
+    }
 }
