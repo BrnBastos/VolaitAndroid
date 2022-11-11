@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,6 +19,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.volaitapp.adapters.CupomListViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -29,9 +38,10 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Bundle> {
+public class MainActivity extends AppCompatActivity {
     List<Cupom> listaCupons;
     ListView cuponsListView;
+    String url = "https://largepurpletower30.conveyor.cloud/api/cupom";
 
     Boolean isSearchByName = false;
     String query = null;
@@ -48,10 +58,12 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-        cuponsListView = findViewById(R.id.CuponsListView);
 
-        CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
-        cuponsListView.setAdapter(adapter);
+        cuponsListView = findViewById(R.id.CuponsListView);
+        getCupom();
+
+       /* CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
+        cuponsListView.setAdapter(adapter);*/
     }
     public void TelaCupom(View view){
         Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
@@ -62,23 +74,75 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         startActivity(intent);
     }
 
-    @NonNull
+    private void getCupom(){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject objt = response.getJSONObject(i);
+                                Cupom cupom = new Cupom();
+                                cupom.setCupomId(objt.getInt("CupomID"));
+                                cupom.setcupomCode(objt.getString("CupomCode"));
+                                cupom.setValorDesconto(BigDecimal.valueOf(objt.getDouble("ValorDesconto")));
+                                cupom.setCupomValidade(Date.valueOf(objt.getString("CupomValidade")));
+                                listaCupons.add(cupom);
+                            }
+                            CupomListViewAdapter adapter = new CupomListViewAdapter(getApplicationContext(), R.layout.cupom100item, listaCupons);
+                            cuponsListView.setAdapter(adapter);
+                        } catch (JSONException exception) {
+                            exception.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        queue.add(jsonArrayRequest);
+                    }
+
+    }
+
+  /*  @NonNull
     @Override
-    public Loader<Bundle> onCreateLoader(int id, @Nullable Bundle args) {
-        Toast toast = Toast.makeText(this, "Carregando...", Toast.LENGTH_LONG);
-        toast.show();
-        if (isSearchByName == false) {
-            return new fetchCupom(this,"id",null);
+    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
+        if (args != null) {
+            query = args.getString("queryString");
         }
-        else if (isSearchByName == true){
-            return new fetchCupom(this,"name",query);
-        }
-        return null;
+        return new fetchCupom(this, null, query);
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<Bundle> loader, Bundle data) {
-        Cupom cupom = new Cupom();
+    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
+        try {
+            JSONArray jsonArray = new JSONArray(data);
+            for(int i = 0; i < jsonArray.length(); i++)
+            {
+                JSONObject objCupom = jsonArray.getJSONObject(i);
+                Cupom cupom = new Cupom();
+                cupom.setCupomId(objCupom.getInt("CupomId"));
+                cupom.setcupomCode(objCupom.getString("CupomCode"));
+                cupom.setValorDesconto(BigDecimal.valueOf(objCupom.getDouble("ValorDesconto")));
+                cupom.setCupomValidade(Date.valueOf(objCupom.getString("ValidadeDesconto")));
+                listaCupons.add(cupom);
+            }
+
+            CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
+            cuponsListView.setAdapter(adapter);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+*/
+
+    /*@Override
+    public void onLoadFinished(@NonNull Loader<String> loader, Bundle data) {
+       *//* Cupom cupom = new Cupom();
         try {
             Bundle allData = data;
             int i = 0;
@@ -107,12 +171,32 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         catch (JSONException e) {
             e.printStackTrace();
+        }*//*
+
+
+
+        try {
+            JSONArray jsonArray = new JSONArray(data);
+            for(int i = 0; i < jsonArray.length(); i++)
+            {
+                JSONObject objCupom = jsonArray.getJSONObject(i);
+                Cupom cupom = new Cupom();
+                cupom.setCupomId(objCupom.getInt("CupomId"));
+                cupom.setcupomCode(objCupom.getString("CupomCode"));
+                cupom.setValorDesconto(BigDecimal.valueOf(objCupom.getDouble("ValorDesconto")));
+                cupom.setCupomValidade(Date.valueOf(objCupom.getString("ValidadeDesconto")));
+                listaCupons.add(cupom);
+            }
+
+            CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
+            cuponsListView.setAdapter(adapter);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-    }
-    @Override
-    public void onLoaderReset(@NonNull Loader<Bundle> loader) {
+    }*/
 
-    }
+   /* @Override
+    public void onLoaderReset(@NonNull Loader<String> loader) {
 
+    }*/
 
-}

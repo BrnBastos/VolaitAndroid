@@ -6,7 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.loader.content.AsyncTaskLoader;
 
-public class fetchCupom extends AsyncTaskLoader<Bundle> {
+public class fetchCupom extends AsyncTaskLoader<String> {
     String mType;
     String mQuery;
     fetchCupom(Context context, String type, @Nullable String complement){
@@ -14,6 +14,8 @@ public class fetchCupom extends AsyncTaskLoader<Bundle> {
         mType = type;
         mQuery = complement;
     }
+
+
     @Override
     protected void onStartLoading(){
         super.onStartLoading();
@@ -21,7 +23,7 @@ public class fetchCupom extends AsyncTaskLoader<Bundle> {
     }
     @Nullable
     @Override
-    public Bundle loadInBackground() {
-            return NetworkUtils.getCupomByID(mQuery);
+    public String loadInBackground() {
+            return NetworkUtils.searchElementsWeb(mQuery);
     }
 }
