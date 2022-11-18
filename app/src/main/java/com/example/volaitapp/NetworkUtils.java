@@ -20,7 +20,7 @@ import java.util.Random;
 
 
 public class NetworkUtils {
-    private static final String URL_API = "https://largepurpletower30.conveyor.cloud/api/cupom";
+    private static final String URL_API = "https://goodaquaski84.conveyor.cloud/api/cupom";
     private static HttpURLConnection connec;
     private static BufferedReader reader;
     private static String artJSON;

@@ -2,6 +2,7 @@ package com.example.volaitapp;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Cupom implements Serializable {
     private int CupomId;
@@ -34,12 +35,12 @@ public class Cupom implements Serializable {
         this.ValorDesconto = value;
     }
 
-    private java.sql.Date CupomValidade;
-    public java.sql.Date getCupomValidade()
+    private Date CupomValidade;
+    public Date getCupomValidade()
     {
         return this.CupomValidade;
     }
-    public void setCupomValidade(java.sql.Date value)
+    public void setCupomValidade(Date value)
     {
         this.CupomValidade = value;
     }
@@ -48,7 +49,7 @@ public class Cupom implements Serializable {
     {
 
     }
-    public Cupom(int CupomId_,String cupomCode_,BigDecimal ValorDesconto_,java.sql.Date CupomValidade_)
+    public Cupom(int CupomId_,String cupomCode_,BigDecimal ValorDesconto_,Date CupomValidade_)
     {
         this.CupomId = CupomId_;
         this.CupomCode = cupomCode_;

@@ -37,13 +37,15 @@ import org.json.JSONObject;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     List<Cupom> listaCupons;
     ListView cuponsListView;
-    String url = "https://losttanski92.conveyor.cloud/api/cupom";
+    String url = "https://goodaquaski84.conveyor.cloud/api/cupom";
 
     Boolean isSearchByName = false;
     String query = null;
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView nav;
 
     int artId = 1;
+    SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +87,12 @@ public class MainActivity extends AppCompatActivity {
                                 cupom.setCupomId(objt.getInt("CupomID"));
                                 cupom.setcupomCode(objt.getString("CupomCode"));
                                 cupom.setValorDesconto(BigDecimal.valueOf(objt.getDouble("ValorDesconto")));
-                                cupom.setCupomValidade(Date.valueOf(objt.getString("CupomValidade")));
+                                String dta =objt.getString("CupomValidade");
+                                try {
+                                    cupom.setCupomValidade( inFormat.parse(dta));
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
                                 listaCupons.add(cupom);
                             }
                             CupomListViewAdapter adapter = new CupomListViewAdapter(getApplicationContext(), R.layout.cupom100item, listaCupons);
@@ -100,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         queue.add(jsonArrayRequest);
-                    }
+    }
+
 
          public void TelaCupom(View view){
             Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
