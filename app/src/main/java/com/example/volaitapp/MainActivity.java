@@ -25,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+
 import com.example.volaitapp.adapters.CupomListViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -36,12 +37,13 @@ import org.json.JSONObject;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     List<Cupom> listaCupons;
     ListView cuponsListView;
-    String url = "https://largepurpletower30.conveyor.cloud/api/cupom";
+    String url = "https://losttanski92.conveyor.cloud/api/cupom";
 
     Boolean isSearchByName = false;
     String query = null;
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
+        listaCupons = new ArrayList<>();
 
         cuponsListView = findViewById(R.id.CuponsListView);
         getCupom();
@@ -65,14 +68,7 @@ public class MainActivity extends AppCompatActivity {
        /* CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
         cuponsListView.setAdapter(adapter);*/
     }
-    public void TelaCupom(View view){
-        Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
-        startActivity(intent);
-    }
-    public void TelaMenu(View view){
-        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
-        startActivity(intent);
-    }
+
 
     private void getCupom(){
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -106,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
         queue.add(jsonArrayRequest);
                     }
 
+         public void TelaCupom(View view){
+            Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
+             startActivity(intent);
+         }
+         public void TelaMenu(View view){
+           Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+             startActivity(intent);
+        }
     }
 
   /*  @NonNull
