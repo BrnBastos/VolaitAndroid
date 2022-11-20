@@ -8,19 +8,27 @@
 
     <ImageView
         android:id="@+id/imageViewBackP"
-        android:layout_width="402dp"
-        android:layout_height="417dp"
-        app:srcCompat="@drawable/cupom_background_purple"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="51dp" />
+        android:layout_width="404dp"
+        android:layout_height="127dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251"
+        app:srcCompat="@drawable/cupom_background_purple" />
 
     <ImageView
         android:id="@+id/btnCupomDetalhes"
         android:layout_width="98dp"
         android:layout_height="34dp"
-        app:srcCompat="@drawable/saibamaisbtn"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="276dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackP"
+        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBackP"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackP"
+        app:layout_constraintVertical_bias="0.706"
+        app:srcCompat="@drawable/saibamaisbtn" />
 
     <TextView
         android:id="@+id/textView6"
@@ -31,8 +39,12 @@
         android:textColor="@color/yellow_cupom"
         android:textFontWeight="900"
         android:textSize="38dp"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackP"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackP"
+        app:layout_constraintVertical_bias="0.507" />
 
     <TextView
         android:id="@+id/textView7"
@@ -43,8 +55,12 @@
         android:textColor="@color/white"
         android:textFontWeight="700"
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="211dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackP"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBackP"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackP"
+        app:layout_constraintVertical_bias="0.107" />
 
     <TextView
         android:id="@+id/textView8"
@@ -52,8 +68,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_semibold"
         android:text="Válido até 27 Ago 2022"
-        android:textSize="11sp"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="286dp" />
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBackP"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBackP"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.233" />
 </androidx.constraintlayout.widget.ConstraintLayout>
