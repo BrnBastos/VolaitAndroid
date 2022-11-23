@@ -8,14 +8,14 @@
 
     <ImageView
         android:id="@+id/imageViewBackB"
-        android:layout_width="402dp"
-        android:layout_height="417dp"
+        android:layout_width="400dp"
+        android:layout_height="137dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187"
+        app:layout_constraintVertical_bias="0.276"
         app:srcCompat="@drawable/cupom_background_blue" />
 
     <ImageView
@@ -27,13 +27,13 @@
         app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="@+id/imageViewBackB"
         app:layout_constraintTop_toTopOf="@+id/imageViewBackB"
-        app:layout_constraintVertical_bias="0.566"
+        app:layout_constraintVertical_bias="0.766"
         app:srcCompat="@drawable/saibamaisbtn" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="195dp"
-        android:layout_height="56dp"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
         android:fontFamily="@font/inter_semibold"
         android:text="R$ 50,00"
         android:textColor="@color/yellow_cupom"
@@ -41,9 +41,10 @@
         android:textSize="38dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackB"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBackB"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewBackB" />
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackB"
+        app:layout_constraintVertical_bias="0.54" />
 
     <TextView
         android:id="@+id/textView7"
@@ -56,10 +57,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackB"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBackB"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewBackB"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.142" />
 
     <TextView
         android:id="@+id/textView8"
@@ -71,8 +72,8 @@
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackB"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBackB"
-        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="@+id/imageViewBackB"
         app:layout_constraintTop_toTopOf="@+id/imageViewBackB"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.801" />
 </androidx.constraintlayout.widget.ConstraintLayout>

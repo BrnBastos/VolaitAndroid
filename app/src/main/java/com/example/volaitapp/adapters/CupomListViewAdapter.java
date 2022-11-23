@@ -57,7 +57,7 @@ public class CupomListViewAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout, null);
 
-            holder.btnCupomDetalhes = row.findViewById(R.id.btnCupomDetalhes);
+            holder.btnCupomDetalhes = row.findViewById(R.id.imageViewBackP);
             row.setTag(holder);
         }
         else {
@@ -68,6 +68,7 @@ public class CupomListViewAdapter extends BaseAdapter {
 
         holder.btnCupomDetalhes.setOnClickListener(v -> {
             Intent intentAbrirEditar = new Intent(context, CuponsActivity.class);
+            intentAbrirEditar.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intentAbrirEditar.putExtra("Cupom", cupom);
             context.startActivity(intentAbrirEditar);
         });
