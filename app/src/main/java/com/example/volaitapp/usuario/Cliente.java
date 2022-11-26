@@ -2,75 +2,75 @@ package com.example.volaitapp.usuario;
 
 public class Cliente
 {
-    private long _CPFCliente;
+    private long getCPFCliente;
     public long getCPFCliente()
     {
-        return this._CPFCliente;
+        return this.getCPFCliente;
     }
     public void setCPFCliente(long value)
     {
-        this._CPFCliente = value;
+        this.getCPFCliente = value;
     }
 
-    private String _NomeCliente;
+    private String getNomeCliente;
     public String getNomeCliente()
     {
-        return this._NomeCliente;
+        return this.getNomeCliente;
     }
     public void setNomeCliente(String value)
     {
-        this._NomeCliente = value;
+        this.getNomeCliente = value;
     }
 
-    private String _NomeSocialCliente;
+    private String getNomeSocialCliente;
     public String getNomeSocialCliente()
     {
-        return this._NomeSocialCliente;
+        return this.getNomeSocialCliente;
     }
     public void setNomeSocialCliente(String value)
     {
-        this._NomeSocialCliente = value;
+        this.getNomeSocialCliente = value;
     }
 
-    private String _LoginCliente;
+    private String getLoginCliente;
     public String getLoginCliente()
     {
-        return this._LoginCliente;
+        return this.getLoginCliente;
     }
     public void setLoginCliente(String value)
     {
-        this._LoginCliente = value;
+        this.getLoginCliente = value;
     }
 
-    private String _TelefoneCliente;
+    private String getTelefoneCliente;
     public String getTelefoneCliente()
     {
-        return this._TelefoneCliente;
+        return this.getTelefoneCliente;
     }
     public void setTelefoneCliente(String value)
     {
-        this._TelefoneCliente = value;
+        this.getTelefoneCliente = value;
     }
 
-    private String _SenhaCliente;
+    private String getSenhaCliente;
     public String getSenhaCliente()
     {
-        return this._SenhaCliente;
+        return this.getSenhaCliente;
     }
     public void setSenhaCliente(String value)
     {
-        this._SenhaCliente = value;
+        this.getSenhaCliente = value;
     }
 
     public Cliente(){}
 
     public Cliente(long CPFCliente_, String NomeCliente_, String NomeSocialCliente_, String LoginCliente_, String TelefoneCliente_, String SenhaCliente_)
     {
-        this.CPFCliente = CPFCliente_;
-        this.NomeCliente = NomeCliente_;
-        this.NomeSocialCliente = NomeSocialCliente_;
-        this.LoginCliente = LoginCliente_;
-        this.TelefoneCliente = TelefoneCliente_;
-        this.SenhaCliente = SenhaCliente_;
+        this.getCPFCliente = CPFCliente_;
+        this.getNomeCliente = NomeCliente_;
+        this.getNomeSocialCliente = NomeSocialCliente_;
+        this.getLoginCliente = LoginCliente_;
+        this.getTelefoneCliente = TelefoneCliente_;
+        this.getSenhaCliente = SenhaCliente_;
     }
 }

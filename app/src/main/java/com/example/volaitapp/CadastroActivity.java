@@ -21,8 +21,8 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.volaitapp.R;
 import com.example.volaitapp.usuario.Cliente;
-import com.example.volaitapp.usuario.Pessoa;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,10 +32,10 @@ import java.util.Objects;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    EditText edtxtNome, edtxtTelefone, edtxtCpf, edtxtEmail, edtxtSenha;
+    EditText editTextNome, editTextNomeSocial, editTextTelefone, editTextCpf, editTextEmail, editTextSenha, editTextConfSenha;
     Button btnCadastrar;
-    String nome, telefone, cpf, email, senha, confirmar;
-    String URL = "https://newgreypage69.conveyor.cloud/api/UsuarioApi";
+    String nome, nomesocial, telefone, cpf, email, senha, confirmar;
+    String URL = "https://lostgreenmouse38.conveyor.cloud/api/cliente";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,56 +43,58 @@ public class CadastroActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_cadastro);
 
-        edtxtNome = findViewById(R.id.editTextNome);
-        edtxtTelefone = findViewById(R.id.editTextTelefone);
-        edtxtCpf = findViewById(R.id.editTextCpf);
-        edtxtEmail = findViewById(R.id.editTextEmail);
-        edtxtSenha = findViewById(R.id.editTextSenha);
-        btnCadastrar = findViewById(R.id.btnCadastrar);
+        editTextCpf        = (EditText) findViewById(R.id.editTextCpf);
+        editTextNome       = (EditText) findViewById(R.id.editTextNome);
+        editTextNomeSocial = (EditText) findViewById(R.id.editTextTextPersonName3);
+        editTextTelefone   = (EditText) findViewById(R.id.editTextTelefone);
+        editTextEmail      = (EditText) findViewById(R.id.editTextEmail);
+        editTextSenha      = (EditText) findViewById(R.id.editTextSenha);
+        btnCadastrar       = (Button) findViewById(R.id.btnCadastrar);
 
         btnCadastrar.setOnClickListener(v -> {
-            nome = String.valueOf(edtxtNome.getText());
-            telefone = String.valueOf(edtxtTelefone.getText());
-            cpf = String.valueOf(edtxtCpf.getText());
-            email = String.valueOf(edtxtEmail.getText());
-            senha = String.valueOf(edtxtSenha.getText());
 
-            Pessoa pessoa = new Pessoa(nome, telefone, cpf);
-            Cliente cliente = new Cliente(email, senha);
+
+            cpf        = String.valueOf(editTextCpf.getText());
+                    nome       = String.valueOf(editTextNome.getText());
+                    nomesocial = String.valueOf(editTextNomeSocial.getText());
+                    telefone   = String.valueOf(editTextTelefone.getText());
+                    email      = String.valueOf(editTextEmail.getText());
+                    senha      = String.valueOf(editTextSenha.getText());
+
+            Cliente cliente = new Cliente(
+                    Long.valueOf(cpf),
+                    nome,
+                    nomesocial,
+                    email,
+                    telefone,
+                    senha
+            );
 
             validarCampos();
 
-            if(Objects.equals(senha, confirmar)){
-                postDataUser(pessoa, cliente);
+                postDataUser(cliente);
                 Intent intent = new Intent(this, LoginActivity.class);
                 Toast.makeText(this, "Cadastro efetuado", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
-            }
-            else {
-                Toast.makeText(CadastroActivity.this, "As senhas não correspondem.", Toast.LENGTH_SHORT).show();
-            }
         });
     }
 
-    public void postDataUser(Pessoa pessoa, Cliente cliente){
+    public void postDataUser(Cliente cliente){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-            JSONObject person = new JSONObject();
-            pessoa.put("nomePessoa", pessoa.getNome());
-            pessoa.put("telefone", pessoa.getTelefone());
-            pessoa.put("cpf", pessoa.getCpf());
-
-            JSONObject usuario = new JSONObject();
-            usuario.put("login", cliente.getLogin());
-            usuario.put("senha", cliente.getSenha());
-
+            JSONObject clienteJsonObject = new JSONObject();
+            clienteJsonObject.put("CPFCliente", cliente.getCPFCliente());
+            clienteJsonObject.put("NomeCliente", cliente.getNomeCliente());
+            clienteJsonObject.put("NomeSocialCliente", cliente.getNomeSocialCliente());
+            clienteJsonObject.put("LoginCliente", cliente.getLoginCliente());
+            clienteJsonObject.put("TelefoneCliente", cliente.getTelefoneCliente());
+            clienteJsonObject.put("SenhaCliente", cliente.getSenhaCliente());
 
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("Pessoa", pessoa);
-            jsonBody.put("Usuario", usuario);
+            jsonBody.put("Cliente", clienteJsonObject);
 
-            final String requestBody = jsonBody.toString();
+            final String requestBody = clienteJsonObject.toString();
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
@@ -139,19 +141,22 @@ public class CadastroActivity extends AppCompatActivity {
         boolean verificacao = false;
 
         if (verificacao != campoNulo(nome)) {
-            edtxtNome.requestFocus();
+            editTextNome.requestFocus();
             Toast.makeText(this, "Preencha o campo nome.", Toast.LENGTH_SHORT).show();
+        } else if (verificacao != campoNulo(nomesocial)) {
+            editTextTelefone.requestFocus();
+            Toast.makeText(this, "Preencha o campo nome social.", Toast.LENGTH_SHORT).show();
         } else if (verificacao != campoNulo(telefone)) {
-            edtxtTelefone.requestFocus();
+            editTextTelefone.requestFocus();
             Toast.makeText(this, "Preencha o campo telefone.", Toast.LENGTH_SHORT).show();
         } else if (verificacao != campoNulo(cpf)) {
-            edtxtCpf.requestFocus();
+            editTextCpf.requestFocus();
             Toast.makeText(this, "Preencha o campo CPF.", Toast.LENGTH_SHORT).show();
         } else if (verificacao != campoNulo(email)) {
-            edtxtEmail.requestFocus();
+            editTextEmail.requestFocus();
             Toast.makeText(this, "Preencha o campo e-mail.", Toast.LENGTH_SHORT).show();
         } else if (verificacao != campoNulo(senha)) {
-            edtxtSenha.requestFocus();
+            editTextSenha.requestFocus();
             Toast.makeText(this, "Preencha o campo senha.", Toast.LENGTH_SHORT).show();
         }
     }
@@ -165,16 +170,17 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        nome = String.valueOf(edtxtNome.getText());
-        telefone = String.valueOf(edtxtTelefone.getText());
-        cpf = String.valueOf(edtxtCpf.getText());
-        email = String.valueOf(edtxtEmail.getText());
-        senha = String.valueOf(edtxtSenha.getText());
+        cpf = String.valueOf(editTextCpf.getText());
+        nome = String.valueOf(editTextNome.getText());
+        nomesocial = String.valueOf(editTextNomeSocial.getText());
+        telefone = String.valueOf(editTextTelefone.getText());
+        email = String.valueOf(editTextEmail.getText());
 
-        outState.putString("nome", nome);
-        outState.putString("telefone", telefone);
         outState.putString("cpf", cpf);
+        outState.putString("nome", nome);
+        outState.putString("nomesocial", nomesocial);
+        outState.putString("telefone", telefone);
         outState.putString("email", email);
-        outState.putString("senha", senha);
     }
 }
+

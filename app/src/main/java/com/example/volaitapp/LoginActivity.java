@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtCadastro;
     String login, senha;
     String PARAMETER = "login";
-    String URL = "https://firstbluebook23.conveyor.cloud/api/UsuarioApi/ConsultarUsuario";
+    String URL = "https://lostgreenmouse38.conveyor.cloud/api/UsuarioApi/ConsultarUsuario";
     private static final String FILE_NAME = "usuarioLogado.json";
 
     @Override
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+/*
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -160,7 +160,7 @@ public class LoginActivity extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-/*
+
 
     // VERIFICAR LOGIN PELO BANCO
     public void verificarLogin(String email, String senha){
@@ -195,7 +195,6 @@ public class LoginActivity extends AppCompatActivity {
 
         return conection.insert("tbClient", null, values);
     }
-*/
 
     // ARMAZENAR DADOS NO ARQUIVO JSON
     private void gravarDados(String json) {
@@ -247,5 +246,7 @@ public class LoginActivity extends AppCompatActivity {
     private void nullMessage(){
         Toast.makeText(this, "Login não cadastrado.", Toast.LENGTH_SHORT).show();
     }
+*/
 
+    }
 }
