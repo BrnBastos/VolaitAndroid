@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
 
          public void TelaCupom(View view){
-            Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MyCupons.class);
              startActivity(intent);
          }
          public void TelaMenu(View view){

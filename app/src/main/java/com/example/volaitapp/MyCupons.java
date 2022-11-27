@@ -6,14 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class SobreActivity extends AppCompatActivity {
+public class MyCupons extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_sobre);
+        setContentView(R.layout.activity_my_cupons);
     }
+
     public void TelaMenu(View view){
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(intent);

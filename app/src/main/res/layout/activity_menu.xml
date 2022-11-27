@@ -84,6 +84,7 @@
         android:layout_width="54dp"
         android:layout_height="55dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="TelaCupom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.181"
@@ -149,6 +150,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
+            android:onClick="TelaCupom"
             android:orientation="horizontal">
 
             <ImageView

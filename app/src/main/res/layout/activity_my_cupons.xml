@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/backgray">
+    android:background="@color/backgray"
+    tools:context=".MyCupons">
 
     <ImageView
         android:id="@+id/imageView9"
@@ -13,11 +13,24 @@
         android:layout_height="70dp"
         android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/menu__1_" />
 
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:onClick="Telahome"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toStartOf="@+id/imageView11"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@drawable/setinha" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -29,8 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:srcCompat="@drawable/volaitmain" />
-
-
 
     <ImageView
         android:id="@+id/imageView8"
@@ -47,12 +58,13 @@
         android:layout_width="54dp"
         android:layout_height="55dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="Telahome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:srcCompat="@drawable/home__1_" />
+        app:srcCompat="@drawable/home" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -73,7 +85,7 @@
         android:layout_width="54dp"
         android:layout_height="55dp"
         android:backgroundTint="#FFFFFF"
-        android:onClick="TelaMenu"
+        android:onClick="Telahome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.955"
@@ -92,34 +104,6 @@
         app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:srcCompat="@drawable/cupons" />
-
-    <ListView
-        android:id="@+id/CuponsListView"
-        android:layout_width="410dp"
-        android:layout_height="562dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="414dp"
-        android:layout_height="41dp"
-        android:text="Cupons Disponíveis:"
-        android:fontFamily="@font/inter_semibold"
-        android:gravity="center"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/laranjaVolait"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@drawable/cupons__1_" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
