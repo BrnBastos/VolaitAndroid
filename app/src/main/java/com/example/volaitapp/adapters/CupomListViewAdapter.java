@@ -66,7 +66,7 @@ public class CupomListViewAdapter extends BaseAdapter {
 
         Cupom cupom = listaCupons.get(position);
 
-        holder.btnCupomDetalhes.setOnClickListener(v -> {
+       holder.btnCupomDetalhes.setOnClickListener(v -> {
             Intent intentAbrirEditar = new Intent(context, CuponsActivity.class);
             intentAbrirEditar.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intentAbrirEditar.putExtra("Cupom", cupom);

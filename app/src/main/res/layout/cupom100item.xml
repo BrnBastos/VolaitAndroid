@@ -11,7 +11,7 @@
         android:layout_width="404dp"
         android:layout_height="127dp"
         app:srcCompat="@drawable/cupom_background_purple"
-        tools:layout_editor_absoluteX="-9dp"
+        tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="191dp" />
 
     <ImageView

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgray"
-    android:onClick="Telahome"
     tools:context=".MenuActivity">
 
 
@@ -150,7 +149,6 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
-            android:onClick="TelaCupom"
             android:orientation="horizontal">
 
             <ImageView

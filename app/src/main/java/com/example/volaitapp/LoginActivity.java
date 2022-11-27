@@ -1,5 +1,6 @@
 package com.example.volaitapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,6 +26,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.volaitapp.usuario.Cliente;
+import com.example.volaitapp.usuario.Pessoa;
+import com.example.volaitapp.usuario.Usuario;
+import com.example.volaitapp.usuario.UsuarioDAO;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -41,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtCadastro;
     String login, senha;
     String PARAMETER = "login";
-    String URL = "https://lostgreenmouse38.conveyor.cloud/api/UsuarioApi/ConsultarUsuario";
+    String URL = "https://rightorangecar53.conveyor.cloud/api/cliente";
     private static final String FILE_NAME = "usuarioLogado.json";
 
     @Override
@@ -62,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-/*
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,46 +75,41 @@ public class LoginActivity extends AppCompatActivity {
                 ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                 try{
                     NetworkInfo ni = cm.getActiveNetworkInfo();
-                    if(ni != null){
+                    if(ni != null)
+                        getUserData();
 
-                        getClientDataFromApi();
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), "Erro na conexão com os servidores", Toast.LENGTH_SHORT);
-//                        verificarLogin(edtxtLogin.getText().toString(), edtxtSenha.getText().toString());
-                    }
                 }catch (Exception e){
 
                 }
             }
-        });
-    }
+        });}
 
     // VERIFICAR LOGIN PELA API
-    private void getClientDataFromApi() {
+    private void getUserData() {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         Uri builtUri = Uri.parse(URL).buildUpon().appendQueryParameter(PARAMETER, edtxtLogin.getText().toString()).build();
         String builtUrl = builtUri.toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, builtUrl,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, builtUrl,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
-                            JSONObject clienteJsonObject = jsonObject.getJSONObject("Cliente");
-
-                            login = clienteJsonObject.getString("LoginCliente");
-                            senha = clienteJsonObject.getString("SenhaCliente");
+                            login = jsonObject.getString("LoginCliente");
+                            senha = jsonObject.getString("SenhaCliente");
 
                             if ((edtxtLogin.getText().toString()).equals(login) && (edtxtSenha.getText().toString()).equals(senha)) {
-                                Gson gson = new Gson();
-                                Cliente clienteFromApi = gson.fromJson(clienteJsonObject.toString(), Cliente.class);
+                              /*  Gson gson = new Gson();
+                                Cliente user1 = gson.fromJson(user.toString(), Cliente.class);
+                                Pessoa person1 = gson.fromJson(person.toString(), Pessoa.class);
+                                insertUser(user1, person1);
 
-                                String json = gson.toJson(clienteFromApi);
-                                gravarDados(json);
+                                Client client = new Client(user1, person1);
+                                String json = gson.toJson(client);
+                                gravarDados(json);*/
 
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
@@ -131,41 +130,14 @@ public class LoginActivity extends AppCompatActivity {
                 nullMessage();
                 Log.e("url", "onErrorResponse: " + error.getLocalizedMessage());
             }
-        })
-        {
-            @Override
-            public String getBodyContentType() {
-            return "application/json; charset=utf-8";
-        }
-
-            @Override
-            public byte[] getBody() throws AuthFailureError {
-            try {
-                return requestBody == null ? null : requestBody.getBytes("utf-8");
-            } catch (UnsupportedEncodingException uee) {
-                VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
-                return null;
-            }
-        }
-
-            @Override
-            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-            String responseString = "";
-            if (response != null) {
-                responseString = String.valueOf(response.statusCode);
-                // can get more details such as response.headers
-            }
-            return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
-        }
-        };
+        });
         queue.add(stringRequest);
     }
 
-
-    // VERIFICAR LOGIN PELO BANCO
+    /*// VERIFICAR LOGIN PELO BANCO
     public void verificarLogin(String email, String senha){
         try {
-            UserDAO userDAO = new UserDAO(getApplicationContext());
+            UsuarioDAO usuarioDAO = new UsuarioDAO(getApplicationContext());
             Client client = userDAO.selectClient(email, senha);
 
             Gson gson = new Gson();
@@ -178,23 +150,22 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
-*/
-/*
 
     // INSERIR USUÁRIO NO BANCO
-    private long insertUser(User user, Pessoa pessoa){
+    private long insertUser(Usuario usuario, Pessoa pessoa){
         dataBase = new DataBase(getApplicationContext());
         conection = dataBase.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put("idUser", user.getIdUsuario());
-        values.put("idPerson", pessoa.getId());
-        values.put("name", pessoa.getNome());
+        values.put("idPerson", person.getId());
+        values.put("name", person.getNome());
         values.put("email", user.getLogin());
         values.put("password", user.getSenha());
 
         return conection.insert("tbClient", null, values);
-    }
+    }*/
+
 
     // ARMAZENAR DADOS NO ARQUIVO JSON
     private void gravarDados(String json) {
@@ -246,7 +217,6 @@ public class LoginActivity extends AppCompatActivity {
     private void nullMessage(){
         Toast.makeText(this, "Login não cadastrado.", Toast.LENGTH_SHORT).show();
     }
-*/
-
-    }
 }
+
+
