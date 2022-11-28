@@ -7,6 +7,39 @@
     android:background="@color/backgray"
     tools:context=".MyCupons">
 
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="323dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="420dp"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center_horizontal"
+        android:text="@string/TextMyCupons"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView31"
+        app:layout_constraintVertical_bias="0.265" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="540dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Cupons resgatados disponíveis"
+        android:textColor="@color/laranjaVolait"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.636" />
+
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="566dp"
@@ -42,6 +75,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:srcCompat="@drawable/volaitmain" />
+
+    <ListView
+        android:id="@+id/CuponsListView"
+        android:layout_width="409dp"
+        android:layout_height="462dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView8"

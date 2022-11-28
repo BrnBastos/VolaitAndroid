@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtCadastro;
     String login, senha;
     String PARAMETER = "login";
-    String URL = "https://rightorangecar53.conveyor.cloud/api/cliente";
+    String URL = "https://foundgoldbox0.conveyor.cloud/api/cliente";
     private static final String FILE_NAME = "usuarioLogado.json";
 
     @Override
