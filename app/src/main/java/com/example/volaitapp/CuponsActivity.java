@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
 public class CuponsActivity extends AppCompatActivity {
 
     TextView textViewCupomCode, textViewDatavalidade;
+    Button btnResgatarCupom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +26,14 @@ public class CuponsActivity extends AppCompatActivity {
 
         textViewCupomCode = findViewById(R.id.textView24);
         textViewDatavalidade = findViewById(R.id.datavalidade);
+        btnResgatarCupom = findViewById(R.id.btnResgatar);
 
         SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy");
         textViewCupomCode.setText(cupom.getcupomCode());
         textViewDatavalidade.setText(dt.format(cupom.getCupomValidade()));
     }
+
+
 
     public void TelaCupom(View view){
         Intent intent = new Intent(getApplicationContext(), CuponsActivity.class);

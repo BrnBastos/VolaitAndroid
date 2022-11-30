@@ -302,7 +302,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/white"
             android:gravity="center"
-            android:onClick="Telahome"
+            android:onClick="Sair"
             android:orientation="horizontal">
 
             <ImageView

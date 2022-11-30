@@ -1,8 +1,11 @@
 package com.example.volaitapp;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -39,20 +42,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
-
+    SharedPreferences sharedpreferences;
     EditText edtxtLogin, edtxtSenha;
     Button btnLogin;
     TextView txtCadastro;
     String login, senha;
     String PARAMETER = "login";
-    String URL = "https://foundgoldbox0.conveyor.cloud/api/cliente";
-    private static final String FILE_NAME = "usuarioLogado.json";
+    String URL = "https://earlysagecar86.conveyor.cloud/api/cliente";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
+
+        sharedpreferences = getSharedPreferences("autoLogin", Context.MODE_PRIVATE);
 
         edtxtLogin = findViewById(R.id.txtEmailLogin);
         edtxtSenha = findViewById(R.id.txtSenhaLogin);
@@ -75,9 +79,9 @@ public class LoginActivity extends AppCompatActivity {
                 ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                 try{
                     NetworkInfo ni = cm.getActiveNetworkInfo();
-                    if(ni != null)
+                    if(ni != null) {
                         getUserData();
-
+                    }
                 }catch (Exception e){
 
                 }
@@ -102,16 +106,19 @@ public class LoginActivity extends AppCompatActivity {
                             senha = jsonObject.getString("SenhaCliente");
 
                             if ((edtxtLogin.getText().toString()).equals(login) && (edtxtSenha.getText().toString()).equals(senha)) {
-                              /*  Gson gson = new Gson();
-                                Cliente user1 = gson.fromJson(user.toString(), Cliente.class);
-                                Pessoa person1 = gson.fromJson(person.toString(), Pessoa.class);
-                                insertUser(user1, person1);
-
-                                Client client = new Client(user1, person1);
-                                String json = gson.toJson(client);
-                                gravarDados(json);*/
 
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+                                SharedPreferences.Editor editor = sharedpreferences.edit();
+                                editor.putInt("key", 1);
+                                editor.putLong("CPFCliente", Long.parseLong(jsonObject.getString("CPFCliente")));
+                                editor.putString("NomeCliente", jsonObject.getString("NomeCliente"));
+                                editor.putString("NomeSocialCliente", jsonObject.getString("NomeSocialCliente"));
+                                editor.putString("LoginCliente", jsonObject.getString("LoginCliente"));
+                                editor.putString("TelefoneCliente", jsonObject.getString("TelefoneCliente"));
+                                editor.putString("SenhaCliente", jsonObject.getString("SenhaCliente"));
+                                editor.apply();
+
                                 startActivity(intent);
                             } else {
                                 message();
@@ -132,61 +139,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         queue.add(stringRequest);
-    }
-
-    /*// VERIFICAR LOGIN PELO BANCO
-    public void verificarLogin(String email, String senha){
-        try {
-            UsuarioDAO usuarioDAO = new UsuarioDAO(getApplicationContext());
-            Client client = userDAO.selectClient(email, senha);
-
-            Gson gson = new Gson();
-            String json = gson.toJson(client);
-            gravarDados(json);
-
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-        } catch (Exception e){
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    // INSERIR USUÁRIO NO BANCO
-    private long insertUser(Usuario usuario, Pessoa pessoa){
-        dataBase = new DataBase(getApplicationContext());
-        conection = dataBase.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put("idUser", user.getIdUsuario());
-        values.put("idPerson", person.getId());
-        values.put("name", person.getNome());
-        values.put("email", user.getLogin());
-        values.put("password", user.getSenha());
-
-        return conection.insert("tbClient", null, values);
-    }*/
-
-
-    // ARMAZENAR DADOS NO ARQUIVO JSON
-    private void gravarDados(String json) {
-        FileOutputStream fos = null;
-        try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
-            fos.write(json.getBytes());
-            Toast.makeText(this, "Usuário logado.", Toast.LENGTH_SHORT).show();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     // VERIFICAÇÃO DE CAMPOS

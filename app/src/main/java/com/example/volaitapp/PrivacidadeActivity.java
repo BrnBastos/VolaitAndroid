@@ -18,4 +18,18 @@ public class PrivacidadeActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(intent);
     }
+    public void TelaHome(View view){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+    public void TelaLancamento(View view){
+        Intent intent = new Intent(getApplicationContext(), LancamentoActivity.class);
+        startActivity(intent);
+    }
+    public void TelaCuponsResgatados(View view){
+        Intent intent = new Intent(getApplicationContext(), MyCupons.class);
+        startActivity(intent);
+    }
+
+
 }

@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.volaitapp.Cupom;
 import com.example.volaitapp.CuponsActivity;
@@ -45,7 +48,7 @@ public class CupomListViewAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
-        ImageView btnCupomDetalhes;
+        ConstraintLayout btnCupomDetalhes;
     }
 
     @Override
@@ -57,7 +60,7 @@ public class CupomListViewAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout, null);
 
-            holder.btnCupomDetalhes = row.findViewById(R.id.imageViewBackP);
+            holder.btnCupomDetalhes = row.findViewById(R.id.card__cupom);
             row.setTag(holder);
         }
         else {

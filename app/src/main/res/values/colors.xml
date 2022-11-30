@@ -12,4 +12,7 @@
     <color name="gray">#6B6E70</color>
     <color name="yellow_cupom">#FFF975</color>
     <color name="laranja1">#FF9575</color>
+    <color name="azulcupom">#44E4E4</color>
+    <color name="laranjacupom">#f24f00</color>
+
 </resources>

@@ -45,7 +45,7 @@ import java.util.List;
 public class MyCupons extends AppCompatActivity {
     List<Cupom> listaCupons;
     ListView cuponsListView;
-    String url = "https://foundgoldbox0.conveyor.cloud/api/cupom";
+    String url = "https://earlysagecar86.conveyor.cloud/api/cupom";
 
     Boolean isSearchByName = false;
     String query = null;

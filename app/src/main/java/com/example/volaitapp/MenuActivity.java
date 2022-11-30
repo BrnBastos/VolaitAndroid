@@ -2,6 +2,7 @@ package com.example.volaitapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -53,5 +54,12 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), LancamentoActivity.class);
         startActivity(intent);
     }
+    public void Sair(View view){
 
+            Context context = getApplicationContext();
+            context.getSharedPreferences("autoLogin", 0).edit().clear().commit();
+
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
 }

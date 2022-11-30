@@ -16,27 +16,28 @@ public class Conexao extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE tbUsuario(" +
-                "idUsuario INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "login TEXT NOT NULL," +
-                "senha TEXT NOT NULL," +
-                "nome TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE tbProduto(" +
-                "cdProd INTEGER," +
-                "nomeProd TEXT NOT NULL," +
-                "animeProd TEXT," +
-                "precoProd TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE tbFavoritos(" +
-                "fkUsuario INTEGER," +
-                "fkProd TEXT," +
-                "FOREIGN KEY (fkUsuario) REFERENCES tbUsuario (idUsuario), " +
-                "FOREIGN KEY (fkProd) REFERENCES tbProduto (cdProd))");
+        db.execSQL("CREATE TABLE tb_cupom(" +
+                "CupomId INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "CupomCode TEXT NOT NULL," +
+                "ValorDesconto TEXT NOT NULL," +
+                "CupomValidade DATETIME NOT NULL)");
+
+//        db.execSQL("CREATE TABLE tbProduto(" +
+//                "cdProd INTEGER," +
+//                "nomeProd TEXT NOT NULL," +
+//                "animeProd TEXT," +
+//                "precoProd TEXT NOT NULL)");
+//        db.execSQL("CREATE TABLE tbFavoritos(" +
+//                "fkUsuario INTEGER," +
+//                "fkProd TEXT," +
+//                "FOREIGN KEY (fkUsuario) REFERENCES tbUsuario (idUsuario), " +
+//                "FOREIGN KEY (fkProd) REFERENCES tbProduto (cdProd))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS tbProduto");
-        db.execSQL("DROP TABLE IF EXISTS tbFavoritos");
+        db.execSQL("DROP TABLE IF EXISTS tb_cupom");
+//        db.execSQL("DROP TABLE IF EXISTS tbFavoritos");
 
         onCreate(db);
     }
