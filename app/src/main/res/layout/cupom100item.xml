@@ -8,15 +8,14 @@
 
     <ImageView
         android:id="@+id/imageViewBackP"
-        android:layout_width="404dp"
-        android:layout_height="127dp"
+        android:layout_width="389dp"
+        android:layout_height="122dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349"
-        app:srcCompat="@drawable/cupom_background_purple" />
+        app:layout_constraintVertical_bias="0.346"
+        app:srcCompat="@drawable/cupom_background_blue" />
 
     <ImageView
         android:id="@+id/btnCupomDetalhes"
@@ -24,10 +23,10 @@
         android:layout_height="34dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
         app:layout_constraintEnd_toEndOf="@+id/imageViewBackP"
-        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="@+id/imageViewBackP"
         app:layout_constraintTop_toTopOf="@+id/imageViewBackP"
-        app:layout_constraintVertical_bias="0.706"
+        app:layout_constraintVertical_bias="0.784"
         app:srcCompat="@drawable/saibamaisbtn" />
 
     <TextView
@@ -36,6 +35,7 @@
         android:layout_height="56dp"
         android:fontFamily="@font/inter_semibold"
         android:text="R$ 100,00"
+        android:backgroundTint="@color/laranjaVolait"
         android:textColor="@color/yellow_cupom"
         android:textFontWeight="900"
         android:textSize="38dp"
@@ -76,4 +76,5 @@
         app:layout_constraintStart_toStartOf="@+id/imageViewBackP"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.233" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,20 +28,30 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), EditPerfilActivity.class);
         startActivity(intent);
     }
+
     public void Telaprivacidade(View view){
         Intent intent = new Intent(getApplicationContext(), PrivacidadeActivity.class);
         startActivity(intent);
     }
+
     public void TelaSobre(View view){
         Intent intent = new Intent(getApplicationContext(), SobreActivity.class);
         startActivity(intent);
     }
+
     public void TelaCupom(View view){
         Intent intent = new Intent(getApplicationContext(), MyCupons.class);
         startActivity(intent);
     }
+
     public void TelaMenu(View view){
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(intent);
     }
+
+    public void TelaLancamento(View view){
+        Intent intent = new Intent(getApplicationContext(), LancamentoActivity.class);
+        startActivity(intent);
+    }
+
 }
