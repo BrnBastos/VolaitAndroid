@@ -45,7 +45,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     List<Cupom> listaCupons;
     ListView cuponsListView;
-    String url = "https://earlysagecar86.conveyor.cloud/api/cupom";
+    String url = "https://funredstone42.conveyor.cloud/api/cupom";
 
     Boolean isSearchByName = false;
     String query = null;
@@ -67,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
         cuponsListView = findViewById(R.id.CuponsListView);
         getCupom();
-
-       /* CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
-        cuponsListView.setAdapter(adapter);*/
     }
 
 
@@ -95,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 listaCupons.add(cupom);
                             }
+
                             CupomListViewAdapter adapter = new CupomListViewAdapter(getApplicationContext(), R.layout.cupom100item, listaCupons);
                             cuponsListView.setAdapter(adapter);
                         } catch (JSONException exception) {
@@ -124,96 +122,4 @@ public class MainActivity extends AppCompatActivity {
              startActivity(intent);
         }
     }
-
-  /*  @NonNull
-    @Override
-    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        if (args != null) {
-            query = args.getString("queryString");
-        }
-        return new fetchCupom(this, null, query);
-    }
-
-    @Override
-    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-        try {
-            JSONArray jsonArray = new JSONArray(data);
-            for(int i = 0; i < jsonArray.length(); i++)
-            {
-                JSONObject objCupom = jsonArray.getJSONObject(i);
-                Cupom cupom = new Cupom();
-                cupom.setCupomId(objCupom.getInt("CupomId"));
-                cupom.setcupomCode(objCupom.getString("CupomCode"));
-                cupom.setValorDesconto(BigDecimal.valueOf(objCupom.getDouble("ValorDesconto")));
-                cupom.setCupomValidade(Date.valueOf(objCupom.getString("ValidadeDesconto")));
-                listaCupons.add(cupom);
-            }
-
-            CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
-            cuponsListView.setAdapter(adapter);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-*/
-
-    /*@Override
-    public void onLoadFinished(@NonNull Loader<String> loader, Bundle data) {
-       *//* Cupom cupom = new Cupom();
-        try {
-            Bundle allData = data;
-            int i = 0;
-            JSONObject objCupom = null;
-            boolean isArray = allData.getBoolean("isArray");
-            if (isArray == false) {
-                objCupom = new JSONObject(data.getString("artData"));
-                cupom.setCupomId(objCupom.getInt("CupomId"));
-                cupom.setcupomCode(objCupom.getString("CupomCode"));
-                cupom.setValorDesconto(BigDecimal.valueOf(objCupom.getDouble("ValorDesconto")));
-                cupom.setCupomValidade(Date.valueOf(objCupom.getString("ValidadeDesconto")));
-            }
-            if (isArray == true) {
-                JSONArray arrayArts = new JSONArray(data.getString("artData"));
-                while (arrayArts.length() > i) {
-                    objCupom = new JSONObject(data.getString("artData"));
-                    cupom.setCupomId(objCupom.getInt("CupomId"));
-                    cupom.setcupomCode(objCupom.getString("CupomCode"));
-                    cupom.setValorDesconto(BigDecimal.valueOf(objCupom.getDouble("ValorDesconto")));
-                    cupom.setCupomValidade(Date.valueOf(objCupom.getString("ValidadeDesconto")));
-                    listaCupons.add(cupom);
-                    i = i + 1;
-                }
-            }
-
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }*//*
-
-
-
-        try {
-            JSONArray jsonArray = new JSONArray(data);
-            for(int i = 0; i < jsonArray.length(); i++)
-            {
-                JSONObject objCupom = jsonArray.getJSONObject(i);
-                Cupom cupom = new Cupom();
-                cupom.setCupomId(objCupom.getInt("CupomId"));
-                cupom.setcupomCode(objCupom.getString("CupomCode"));
-                cupom.setValorDesconto(BigDecimal.valueOf(objCupom.getDouble("ValorDesconto")));
-                cupom.setCupomValidade(Date.valueOf(objCupom.getString("ValidadeDesconto")));
-                listaCupons.add(cupom);
-            }
-
-            CupomListViewAdapter adapter = new CupomListViewAdapter(this, R.layout.cupom100item, listaCupons);
-            cuponsListView.setAdapter(adapter);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-   /* @Override
-    public void onLoaderReset(@NonNull Loader<String> loader) {
-
-    }*/
 

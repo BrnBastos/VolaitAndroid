@@ -18,6 +18,8 @@ import com.example.volaitapp.CuponsActivity;
 import com.example.volaitapp.R;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -48,6 +50,7 @@ public class CupomListViewAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
+        TextView txtPreco, txtDataValidade;
         ConstraintLayout btnCupomDetalhes;
     }
 
@@ -61,6 +64,8 @@ public class CupomListViewAdapter extends BaseAdapter {
             row = inflater.inflate(layout, null);
 
             holder.btnCupomDetalhes = row.findViewById(R.id.card__cupom);
+            holder.txtPreco = row.findViewById(R.id.textView6);
+            holder.txtDataValidade = row.findViewById(R.id.textView8);
             row.setTag(holder);
         }
         else {
@@ -68,6 +73,15 @@ public class CupomListViewAdapter extends BaseAdapter {
         }
 
         Cupom cupom = listaCupons.get(position);
+
+        DecimalFormat df = new DecimalFormat();
+        df.applyPattern("R$ #,##0.00");
+
+        holder.txtPreco.setText(df.format(cupom.getValorDesconto()));
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy");
+        String datadevalidade = simpleDateFormat.format(cupom.getCupomValidade());
+        holder.txtDataValidade.setText(datadevalidade);
 
        holder.btnCupomDetalhes.setOnClickListener(v -> {
             Intent intentAbrirEditar = new Intent(context, CuponsActivity.class);

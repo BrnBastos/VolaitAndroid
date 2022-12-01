@@ -45,7 +45,7 @@ import java.util.List;
 public class MyCupons extends AppCompatActivity {
     List<Cupom> listaCupons;
     ListView cuponsListView;
-    String url = "https://earlysagecar86.conveyor.cloud/api/cupom";
+    String url = "https://funredstone42.conveyor.cloud/api/cupom";
 
     Boolean isSearchByName = false;
     String query = null;
@@ -111,8 +111,8 @@ public class MyCupons extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivity(intent);
     }
-    public void TelaSobre(View view){
-        Intent intent = new Intent(getApplicationContext(), SobreActivity.class);
+    public void TelaLancamento(View view){
+        Intent intent = new Intent(getApplicationContext(), LancamentoActivity.class);
         startActivity(intent);
     }
     public void TelaCupom(View view){

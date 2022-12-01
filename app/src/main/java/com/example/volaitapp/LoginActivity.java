@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtCadastro;
     String login, senha;
     String PARAMETER = "login";
-    String URL = "https://earlysagecar86.conveyor.cloud/api/cliente";
+    String URL = "https://funredstone42.conveyor.cloud/api/cliente";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

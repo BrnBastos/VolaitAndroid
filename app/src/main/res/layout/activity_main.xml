@@ -11,17 +11,17 @@
         android:id="@+id/textView44"
         android:layout_width="185dp"
         android:layout_height="27dp"
-        android:fontFamily="@font/inter_semibold"
+        android:fontFamily="@font/inter_bold"
         android:gravity="center"
-        android:text="SUPER PROMOÇÕES"
-        android:textColor="@color/black"
+        android:text="CUPONS DIÀRIOS"
+        android:textColor="#0C9DD8"
         android:textSize="17dp"
         app:layout_constraintBottom_toTopOf="@+id/CuponsListView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView17"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView17"
@@ -32,20 +32,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintVertical_bias="0.161"
         app:srcCompat="@drawable/thumb_main" />
+
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="566dp"
         android:layout_height="70dp"
-        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.574"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/menu__1_" />
-
 
     <TextView
         android:id="@+id/textView39"
@@ -127,8 +126,8 @@
 
     <ListView
         android:id="@+id/CuponsListView"
-        android:layout_width="391dp"
-        android:layout_height="373dp"
+        android:layout_width="396dp"
+        android:layout_height="405dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:background="#FAA186"

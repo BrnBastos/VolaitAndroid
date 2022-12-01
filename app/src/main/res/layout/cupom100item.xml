@@ -67,20 +67,20 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView35"
-            android:layout_width="83dp"
-            android:layout_height="65dp"
-            android:fontFamily="@font/inter_semibold"
+            android:id="@+id/textViewClick"
+            android:layout_width="70dp"
+            android:layout_height="68dp"
+            android:fontFamily="@font/inter"
             android:gravity="center"
             android:text="VER MAIS"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
             app:layout_constraintEnd_toEndOf="@+id/imageViewBackP"
-            app:layout_constraintHorizontal_bias="0.81"
+            app:layout_constraintHorizontal_bias="0.634"
             app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toTopOf="@+id/imageViewBackP"
-            app:layout_constraintVertical_bias="0.578" />
+            app:layout_constraintVertical_bias="0.421" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,7 +39,7 @@ public class EditPerfilActivity extends AppCompatActivity {
     EditText editTextNome, editTextNomeSocial, editTextLogin, edtxtSenha, editTextTelefone;
     Button btnSalvar;
     String nome, nomesocial, telefone, email;
-    String URL = "https://losttanpencil1.conveyor.cloud/api/cliente/updatecliente";
+    String URL = "https://funredstone42.conveyor.cloud/api/cliente/updatecliente";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
