@@ -9,12 +9,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="328dp"
-        android:layout_height="253dp"
+        android:layout_width="293dp"
+        android:layout_height="296dp"
         android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
         android:gravity="center"
-        android:text="Sejam Bem Vindos"
+        android:text="Seja Bem Vindo"
         android:textColor="@color/white"
         android:textSize="70dp"
         android:topLeftRadius="10dp"
@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.441" />
 
     <Button
         android:id="@+id/button"
@@ -63,14 +63,16 @@
         android:id="@+id/textView3"
         android:layout_width="86dp"
         android:layout_height="36dp"
+        android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:text="Volait"
         android:textColor="@color/white"
         android:textSize="80px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.133" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

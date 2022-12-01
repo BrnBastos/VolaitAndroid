@@ -25,7 +25,7 @@
             android:backgroundTint="@color/laranja1"
             android:fontFamily="@font/inter_semibold"
             android:text="R$ 100,00"
-            android:textColor="@color/yellow_cupom"
+            android:textColor="@color/white"
             android:textFontWeight="900"
             android:textSize="38dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewBackP"
