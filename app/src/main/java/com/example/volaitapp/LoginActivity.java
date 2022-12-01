@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtCadastro;
     String login, senha;
     String PARAMETER = "login";
-    String URL = "https://funredstone42.conveyor.cloud/api/cliente";
+    String URL = "https://righttancat31.conveyor.cloud/api/cliente";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
             }
-        });}
+        });
+    }
 
     // VERIFICAR LOGIN PELA API
     private void getUserData() {

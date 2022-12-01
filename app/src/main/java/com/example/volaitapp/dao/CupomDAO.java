@@ -10,6 +10,7 @@ import com.example.volaitapp.Conexao;
 import com.example.volaitapp.Cupom;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class CupomDAO {
 
     private final Conexao conexao;
     private final SQLiteDatabase banco;
-    SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd");
+
 
     public CupomDAO(Context context){
         conexao = new Conexao(context);
@@ -32,9 +33,13 @@ public class CupomDAO {
         ContentValues values = new ContentValues();
         values.put("CupomId", cupom.getCupomId());
         values.put("CupomCode", cupom.getcupomCode());
-        values.put("CupomCode", String.valueOf(cupom.getValorDesconto()));
-        values.put("CupomValidade", String.valueOf(cupom.getCupomValidade()));
-            
+        values.put("ValorDesconto", String.valueOf(cupom.getValorDesconto()));
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = cupom.getCupomValidade();
+        String dateToStr = dateFormat.format(date);
+
+        values.put("CupomValidade", dateToStr);
 
         return banco.insert("tb_cupom", null, values);
     }
@@ -44,13 +49,12 @@ public class CupomDAO {
     {
         List<Cupom> listaCupoms = new ArrayList<>();
 
-        Cursor cursor = banco.query("tbCupom",
+        Cursor cursor = banco.query("tb_cupom",
                 new String[] {
                         "CupomId",
                         "CupomCode",
                         "ValorDesconto",
                         "CupomValidade"
-                        
                 },
                 null,
                 null,
@@ -64,7 +68,14 @@ public class CupomDAO {
             cupom.setCupomId(cursor.getInt(0));
             cupom.setcupomCode(cursor.getString(1));
             cupom.setValorDesconto(BigDecimal.valueOf(cursor.getDouble(2)));
-            //cupom.setCupomValidade(Date.parse(cursor.getString(3)));
+            SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+            try {
+                cupom.setCupomValidade(inFormat.parse(cursor.getString(3)));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
 
             listaCupoms.add(cupom);
         }
@@ -72,15 +83,15 @@ public class CupomDAO {
         return listaCupoms;
     }
 
-    public Cupom selectCupomPorCNPJ(String cnpj){
+    public Cupom selectCupomById(int id){
         Cupom cupom = new Cupom();
-        Cursor cursor = banco.query("tbCupom",
+        Cursor cursor = banco.query("tb_cupom",
                 new String[]{"CupomId",
                         "CupomCode",
                         "ValorDesconto",
                         "CupomValidade"},
                 "CupomId = ?",
-                new String[]{cnpj},
+                new String[]{String.valueOf(id)},
                 null,
                 null,
                 null,
@@ -92,6 +103,7 @@ public class CupomDAO {
             cupom.setcupomCode(cursor.getString(1));
             cupom.setValorDesconto(BigDecimal.valueOf(cursor.getDouble(2)));
 
+            SimpleDateFormat inFormat = new SimpleDateFormat("yyyy-MM-dd");
             try {
                 cupom.setCupomValidade(inFormat.parse(cursor.getString(3)));
             } catch (ParseException e) {

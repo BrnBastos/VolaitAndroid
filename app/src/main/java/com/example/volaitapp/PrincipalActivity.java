@@ -21,13 +21,12 @@ public class PrincipalActivity extends AppCompatActivity {
         sharedpreferences = getSharedPreferences("autoLogin", Context.MODE_PRIVATE);
         int j = sharedpreferences.getInt("key", 0);
 
-        Toast.makeText(getApplicationContext(), "shared", Toast.LENGTH_LONG);
-
         //Default is 0 so autologin is disabled
         if(j > 0){
             Intent activity = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(activity);
         }
+
     }
 
     public void TelaLogin(View view){

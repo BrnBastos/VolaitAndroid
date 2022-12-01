@@ -39,7 +39,7 @@ public class AtualizaSenhaActivity extends AppCompatActivity {
     EditText editTextSenha, editTextNovaSenha, editTextConfirmarSenha;
     Button btnSalvar;
     String senhaatual, novasenha, confirmarsenha;
-    String URL = "https://funredstone42.conveyor.cloud/api/cliente/updatecliente";
+    String URL = "https://righttancat31.conveyor.cloud/api/cliente/updatecliente";
     Cliente cliente;
 
     @Override

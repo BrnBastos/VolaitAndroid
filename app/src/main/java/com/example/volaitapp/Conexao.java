@@ -20,7 +20,7 @@ public class Conexao extends SQLiteOpenHelper {
                 "CupomId INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "CupomCode TEXT NOT NULL," +
                 "ValorDesconto TEXT NOT NULL," +
-                "CupomValidade DATETIME NOT NULL)");
+                "CupomValidade TEXT NOT NULL)");
 
 //        db.execSQL("CREATE TABLE tbProduto(" +
 //                "cdProd INTEGER," +
